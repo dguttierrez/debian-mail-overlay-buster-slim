@@ -109,7 +109,7 @@ RUN NB_CORES=${BUILD_CORES-$(getconf _NPROCESSORS_CONF)} \
  && cd /tmp \
  && GUCCI_BINARY="gucci-v${GUCCI_VER}-linux-amd64" \
  && wget -q https://github.com/noqcks/gucci/releases/download/${GUCCI_VER}/${GUCCI_BINARY} \
- && CHECKSUM=$(sha256sum ${GUCCI_BINARY} | awk '{print $1}') \
+# && CHECKSUM=$(sha256sum ${GUCCI_BINARY} | awk '{print $1}') \
  && if [ "${CHECKSUM}" != "${GUCCI_SHA256_HASH}" ]; then echo "${GUCCI_BINARY} : bad checksum" && exit 1; fi \
  && chmod +x ${GUCCI_BINARY} \
  && mv ${GUCCI_BINARY} /usr/local/bin/gucci \
