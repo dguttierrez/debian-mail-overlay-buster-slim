@@ -6,7 +6,7 @@ ARG BUILD_CORES
 ARG SKALIBS_VER=2.7.0.0
 ARG EXECLINE_VER=2.5.0.1
 ARG S6_VER=2.7.2.2
-ARG RSPAMD_VER=1.9.4
+ARG RSPAMD_VER=1.9.4-1
 ARG GUCCI_VER=0.1.0
 
 ARG SKALIBS_SHA256_HASH="96494d76669d2f8622511d5d616b6367801a42683c0bb11a8855114e5ccbd756"
@@ -109,8 +109,8 @@ RUN NB_CORES=${BUILD_CORES-$(getconf _NPROCESSORS_CONF)} \
  && cd /tmp \
  && GUCCI_BINARY="gucci-v${GUCCI_VER}-linux-amd64" \
  && wget -q https://github.com/noqcks/gucci/releases/download/${GUCCI_VER}/${GUCCI_BINARY} \
-# && CHECKSUM=$(sha256sum ${GUCCI_BINARY} | awk '{print $1}') \
-# && if [ "${CHECKSUM}" != "${GUCCI_SHA256_HASH}" ]; then echo "${GUCCI_BINARY} : bad checksum" && exit 1; fi \
+ && CHECKSUM=$(sha256sum ${GUCCI_BINARY} | awk '{print $1}') \
+ && if [ "${CHECKSUM}" != "${GUCCI_SHA256_HASH}" ]; then echo "${GUCCI_BINARY} : bad checksum" && exit 1; fi \
  && chmod +x ${GUCCI_BINARY} \
  && mv ${GUCCI_BINARY} /usr/local/bin/gucci \
  && apt-get purge -y ${BUILD_DEPS} \
