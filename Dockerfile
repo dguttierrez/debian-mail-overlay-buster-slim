@@ -16,7 +16,7 @@ ARG RSPAMD_SHA256_HASH="c6d5f50608181dac41fe2e141f6d1861991098ed20a8d51112470a3d
 ARG GUCCI_SHA256_HASH="44199d8edf88442324951cafeaaea047f524deb8d887a0174cacc3aaff139740"
 
 LABEL description="s6 + rspamd image based on Debian" \
-      maintainer="Lowcrash <davor@lendava.com>" \
+      maintainer="Hardware <contact@meshup.net>" \
       rspamd_version="Rspamd v$RSPAMD_VER built from source" \
       s6_version="s6 v$S6_VER built from source"
 
