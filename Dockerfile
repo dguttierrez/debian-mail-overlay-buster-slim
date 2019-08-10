@@ -42,7 +42,7 @@ RUN NB_CORES=${BUILD_CORES-$(getconf _NPROCESSORS_CONF)} \
     libmagic-dev" \
  && apt-get update && apt-get install -y -q --no-install-recommends \
     ${BUILD_DEPS} \
-    libevent-2.0-5 \
+    libevent-2.1-6 \
     libglib2.0-0 \
     libssl1.1 \
     libmagic1 \
@@ -50,7 +50,7 @@ RUN NB_CORES=${BUILD_CORES-$(getconf _NPROCESSORS_CONF)} \
     libluajit-5.1-2 \
     libsqlite3-0 \
     libhyperscan5 \
-    libjemalloc1 \
+    libjemalloc2 \
     sqlite3 \
     openssl \
     ca-certificates \
