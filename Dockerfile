@@ -49,7 +49,7 @@ RUN NB_CORES=${BUILD_CORES-$(getconf _NPROCESSORS_CONF)} \
     liblua5.1-0 \
     libluajit-5.1-2 \
     libsqlite3-0 \
-    libhyperscan4 \
+    libhyperscan5 \
     libjemalloc1 \
     sqlite3 \
     openssl \
